@@ -109,14 +109,20 @@
       if (!data.password || data.password.trim() === '') return tip('密码不能为空')
       if (data.password.length < 6) return tip('密码长度过短')
 
-      let { data: res } = await axios.post('/login', data)
+      try {
+        let { data: res } = await axios.post('/login', data)
+        tip(res.message)
 
-      tip(res.message)
-
-      setTimeout(item => {
-        location.href = './index.html'
-      }, 1000)
-
+        setTimeout(item => {
+          location.href = './index.html'
+        }, 1000)
+      } catch (e) {
+        if (e.response.status === 400) {
+          tip(e.response.data.message)
+          return
+        }
+        tip('服务器繁忙，请稍后重试着')
+      }
     })
   </script>
 </body>
