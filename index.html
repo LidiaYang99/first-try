@@ -7,13 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>首页</title>
 
-  <!-- 这里一进来就需要判断用户有没有令牌，如果没有则直接转回登录页 -->
-  <script>
-    if (localStorage.getItem('user-token') === null) {
-      location.href = './login.html'
-    }
-  </script>
-
   <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="./bootstrap/bootstrap-icons.css" />
   <link rel="stylesheet" href="./css/common.css" />
