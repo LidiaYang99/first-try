@@ -94,44 +94,7 @@
   <script src="./js/common.js"></script>
 
   <script>
-    // 1. 配置根路径
-    axios.defaults.baseURL = 'http://ajax-api.itheima.net'
-
-    // 2. 给form注册事件
-    // 如果这里想给form注册的话，按钮button的type需要是submit,这样才会触发form的submit事件，否则没有
-    document.querySelector('#btn-login').addEventListener('click', async function (e) {
-      e.preventDefault()
-
-      let data = serialize(document.querySelector('form'), { hash: true })
-
-      //if (!data.username || !data.password) return tip('用户名或密码不能为空')
-      if (!data.username || data.username.trim() === '') return tip('用户名不能为空')
-      if (!data.password || data.password.trim() === '') return tip('密码不能为空')
-      if (data.password.length < 6) return tip('密码长度过短')
-
-      try {
-        let { data: res } = await axios.post('/login', data)
-        tip(res.message)
-        console.log(res);
-
-        console.log(res.data.token);
-
-        localStorage.setItem('user-token', res.data.token)
-        localStorage.setItem('user-name', res.data.username)
-
-        setTimeout(item => {
-          location.href = './index.html'
-        }, 1000)
-      } catch (e) {
-        if (e.response.status === 400) {
-          tip(e.response.data.message)
-          return
-        }
-        tip('服务器繁忙，请稍后重试着')
-      }
-
-      console.log(arr);
-    })
+  
   </script>
 </body>
 
