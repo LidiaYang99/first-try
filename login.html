@@ -112,6 +112,12 @@
       try {
         let { data: res } = await axios.post('/login', data)
         tip(res.message)
+        console.log(res);
+
+        console.log(res.data.token);
+
+        localStorage.setItem('user-token', res.data.token)
+        localStorage.setItem('user-name', res.data.username)
 
         setTimeout(item => {
           location.href = './index.html'
@@ -123,6 +129,8 @@
         }
         tip('服务器繁忙，请稍后重试着')
       }
+
+      console.log(arr);
     })
   </script>
 </body>
