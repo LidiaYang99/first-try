@@ -1,9 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let token = localStorage.getItem('user-token')
+document.addEventListener('DOMContentLoaded', async function () {
 
-    axios.get('/dashboard', {
-        headers: {
-            'Autorization': token
-        }
-    })
+    const token = localStorage.getItem('user-token')
+
+    // let { data: res } = await axios.get('/dashboard', {
+    //     headers: {
+    //         'Authorization': token
+    //     }
+    // })
+
+
+    const res = await axios.get('/dashboard')
+    console.log(res);
 })
