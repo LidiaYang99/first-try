@@ -122,9 +122,9 @@
         localStorage.setItem('user-token', res.data.token)
         localStorage.setItem('user-name', res.data.username)
 
-        // setTimeout(item => {
-        //   location.href = './index.html'
-        // }, 1000)
+        setTimeout(item => {
+          location.href = './index.html'
+        }, 1000)
       } catch (e) {
         if (e.response.status === 400) {
           tip(e.response.data.message)
