@@ -198,7 +198,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">添加学员</h5>
+          <h5 class="modal-title">XXX</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -277,5 +277,173 @@
   <script src="./lib/axios.js"></script>
   <script src="./lib/form-serialize.js"></script>
   <script src="./js/common.js"></script>
+
+
+
+  <script>
+    // 获取元素
+    let list = document.querySelector('.list')
+    let total = document.querySelector('.total')
+
+    let add = document.querySelector('.btn-inner--icon .bi-plus')
+    let modal_title = document.querySelector('.modal-title')
+
+    let form = document.querySelector('#form')
+
+    // 封装函数
+    async function render() {
+
+      // 获取数据学员的数据
+      let { data: res } = await axios.get('/students')
+      console.log(res.data);
+
+      total.innerText = res.data.length
+
+      // 遍历数据，渲染数据
+      list.innerHTML = res.data.map(item => {
+
+        let { age, area, city, gender, group, hope_salary, name, province, salary, id } = item
+        return `
+                      <tr>
+                      <td>${name}</td>
+                      <td>${age}</td>
+                      <td>${gender === 0 ? '男' : '女'}</td>
+                      <td>${group}</td>
+                      <td>${hope_salary}</td>
+                      <td>${salary}</td>
+                      <td>${province + city + area}</td>
+                      <td>
+                        <a href="javascript:;" class="text-success mr-3"><i data-id="${id}" class="bi bi-pen"></i></a>
+                        <a href="javascript:;" class="text-danger"><i data-id="${id}" class="bi bi-trash"></i></a>
+                      </td>
+                    </tr> `
+      }).join('')
+    }
+    render()
+
+    // 点击删除学员数据
+    // 使用事件委托
+    list.addEventListener('click', async function (e) {
+      console.log(e.target.dataset.id);
+
+      if (e.target.classList.contains('bi-trash')) {
+        let id = e.target.dataset.id
+
+        try {
+          //接口文档里的id前面加了引号，是不加的
+          //接口文档里的地址加了冒号，是要你填具体值得意思
+          let res = await axios.delete(`/students/${id}`)
+          render()
+        } catch (e) {
+          console.dir(e)
+        }
+      }
+    })
+
+
+    // 实现弹框显示
+    // 获取模态框
+    let modalBox = document.querySelector('#modal')
+
+    // 新建实例对象
+    let modal = new bootstrap.Modal(modalBox)
+
+    modal.hide()
+
+    add.addEventListener('click', function () {
+
+      // 重置表单
+      form.reset()
+
+      //更改标题
+      modal_title.innerHTML = '添加学员'
+
+      // 设置标识，便于区分是添加信息，还是编辑数据 (因为添加学员信息和修改是公用同一个弹框)
+      // 如果是添加，记录一个字符串“add"
+      // 如果是修改，记录一个修改的id
+      modalBox.dataset.id = 'add'
+
+      // 切换弹框状态
+      modal.toggle()
+    })
+
+    let provinceSelect = document.querySelector('[name=province]')
+    let citySelect = document.querySelector('[name=city]')
+    let areaSelect = document.querySelector('[name=area]')
+
+    // 初始化省市区联动的功能
+    async function initCity() {
+      let { data: province } = await axios.get('/api/province')
+
+      // 渲染省份
+      let arrP = province.data.map(item => `<option value="${item}">${item}</option>`).join('')
+      provinceSelect.innerHTML = `<option value="">--省份--</option>+${arrP}`
+
+      // 选择了省份后，市的信息自动渲染
+      provinceSelect.addEventListener('change', async function () {
+
+        // 省份发生变化时，区域自动重置
+        areaSelect.value = ''
+
+        // 渲染城市
+        let { data: city } = await axios.get('/api/city', {
+          params: {
+            pname: provinceSelect.value
+          }
+        })
+
+        let arrC = city.data.map(item => `<option value="${item}">${item}</option> `).join('')
+
+        citySelect.innerHTML = `<option value="">--城市--</option>+${arrC}`
+      })
+
+      // 选择了市后，地区的信息自动渲染
+      citySelect.addEventListener('change', async function () {
+
+        // 渲染地区
+        let { data: area } = await axios.get('/api/area', {
+          params: {
+            pname: provinceSelect.value,
+            cname: citySelect.value
+          }
+        })
+        let arrA = area.data.map(item => `<option value="${item}">${item}</option> `).join('')
+        areaSelect.innerHTML = `<option value="">--地区--</option>+ ${arrA}`
+      })
+
+
+    }
+    initCity()
+
+    //提交表单数据
+    let btnSubmit = document.querySelector('#submit')
+    btnSubmit.addEventListener('click', async function () {
+      let data = serialize(form, { hash: true })
+      console.log(data);
+
+      //因为一些参数需要是数字类型，所以这里给他们更改类型
+      data.age = +data.age
+      data.gender = +data.gender
+      data.hope_salary = +data.hope_salary
+      data.salary = +data.salary
+      data.group = +data.group
+
+      if (modalBox.dataset.id === 'add') {
+        try {
+          let { data: res } = await axios.post('/students', data)
+          modal.toggle()
+          render()
+        } catch (e) {
+          console.dir(e)
+          alert('添加失败')
+        }
+      }
+      else { }
+    })
+
+
+
+  </script>
 </body>
+
 </html>
