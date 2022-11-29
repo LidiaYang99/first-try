@@ -290,6 +290,10 @@
 
     let form = document.querySelector('#form')
 
+    let provinceSelect = document.querySelector('[name=province]')
+    let citySelect = document.querySelector('[name=city]')
+    let areaSelect = document.querySelector('[name=area]')
+
     // 封装函数
     async function render() {
 
@@ -321,11 +325,21 @@
     }
     render()
 
-    // 点击删除学员数据
+    // 实现弹框显示
+    // 获取模态框
+    let modalBox = document.querySelector('#modal')
+
+    // 新建实例对象
+    let modal = new bootstrap.Modal(modalBox)
+
+    modal.hide()
+
+    // 点击删除/编辑学员数据
     // 使用事件委托
     list.addEventListener('click', async function (e) {
       console.log(e.target.dataset.id);
 
+      // 如果为真，则点击的删除按钮
       if (e.target.classList.contains('bi-trash')) {
         let id = e.target.dataset.id
 
@@ -338,18 +352,68 @@
           console.dir(e)
         }
       }
+
+      // 如果为真，则点击的是编辑按钮
+      if (e.target.classList.contains('bi-pen')) {
+
+        //将点击的编辑按钮的id，存到模态框上（模态框是唯一的，所以要改谁，就存谁）
+        modalBox.dataset.id = e.target.dataset.id
+        modal_title.innerHTML = '编辑学员'
+
+
+        let { data: res } = await axios.get(`/students/${modalBox.dataset.id}`)
+
+        let fields = Array.from(document.querySelectorAll('#form [name]'))
+
+        // 回显数据
+        fields.forEach(item => {
+          // 回显性别数据
+          if (item.name === 'gender') {
+            // 单选框要单独处理，两个单选框，不能都选中
+            // 看input的value值 和 student.gender 是否相等，相等才选中
+            console.log(res.data.gender);
+            // 这里要加一个+，让他变成数字类型。
+            // 因为原始的类型是字符串 value="0"
+            if (+item.value === res.data.gender) {
+              console.log(item.value);
+              item.checked = true
+            }
+            // 回显其他的数据
+          } else {
+            // input框, select框，都可以通过.value赋值
+            // item就是 每个有name的表单元素，item.name => 表单元素的name值
+            // 利用每个item.name值，就可以去student中用中括号语法去取值
+            item.value = res.data[item.name]
+          }
+        })
+
+        // 回显城市
+        let { data: city } = await axios.get('/api/city', {
+          params: {
+            pname: provinceSelect.value
+          }
+        })
+        let arrC = city.data.map(item => `<option value="${item}">${item}</option> `).join('')
+        citySelect.innerHTML = `<option value="">--城市--</option>+${arrC}`
+        citySelect.value = res.data.city
+
+        // 回显地区
+        let { data: area } = await axios.get('/api/area', {
+          params: {
+            pname: provinceSelect.value,
+            cname: citySelect.value
+          }
+        })
+        let arrA = area.data.map(item => `<option value="${item}">${item}</option> `).join('')
+        areaSelect.innerHTML = `<option value="">--地区--</option>+ ${arrA}`
+        areaSelect.value = res.data.area
+
+
+        modal.show()
+      }
     })
 
-
-    // 实现弹框显示
-    // 获取模态框
-    let modalBox = document.querySelector('#modal')
-
-    // 新建实例对象
-    let modal = new bootstrap.Modal(modalBox)
-
-    modal.hide()
-
+    // 点击添加按钮
     add.addEventListener('click', function () {
 
       // 重置表单
@@ -367,9 +431,7 @@
       modal.toggle()
     })
 
-    let provinceSelect = document.querySelector('[name=province]')
-    let citySelect = document.querySelector('[name=city]')
-    let areaSelect = document.querySelector('[name=area]')
+
 
     // 初始化省市区联动的功能
     async function initCity() {
@@ -438,7 +500,17 @@
           alert('添加失败')
         }
       }
-      else { }
+      // 修改信息操作
+      else {
+
+        try {
+          await axios.put(`/students/${modalBox.dataset.id}`, data)
+          modal.toggle()
+          render()
+        } catch (e) {
+          console.dir(e)
+        }
+      }
     })
 
 
