@@ -1,150 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>学生</title>
-    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="./bootstrap/bootstrap-icons.css" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/student.css" />
-  </head>
-  <body class="application application-offset">
-    <div class="container-fluid container-application">
-      <div class="sidenav show" id="sidenav-main">
-        <!-- Sidenav header -->
-        <div class="sidenav-header d-flex align-items-center">
-          <a class="navbar-brand" href="./index.html">
-            <span class="logo">·ITCAST·</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学生</title>
+  <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="./bootstrap/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/student.css" />
+</head>
+
+<body class="application application-offset">
+  <div class="container-fluid container-application">
+    <div class="sidenav show" id="sidenav-main">
+      <!-- Sidenav header -->
+      <div class="sidenav-header d-flex align-items-center">
+        <a class="navbar-brand" href="./index.html">
+          <span class="logo">·ITCAST·</span>
+        </a>
+      </div>
+      <!-- User mini profile -->
+      <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
+        <!-- Avatar -->
+        <div>
+          <a href="#" class="avatar rounded-circle avatar-xl">
+            <img alt="Image placeholder" src="https://yanxuan-item.nosdn.127.net/8b27deb1670c53e67c42ca3e1ed6fd12.jpg"
+              class="" />
           </a>
-        </div>
-        <!-- User mini profile -->
-        <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
-          <!-- Avatar -->
-          <div>
-            <a href="#" class="avatar rounded-circle avatar-xl">
-              <img alt="Image placeholder" src="https://yanxuan-item.nosdn.127.net/8b27deb1670c53e67c42ca3e1ed6fd12.jpg" class="" />
+          <div class="mt-5">
+            <h5 class="mb-0 text-white">黑马前端</h5>
+            <span class="d-block text-sm text-white opacity-8 mb-3">数据可视化</span>
+            <a href="javascript:;" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
+              <span class="btn-inner--text">学前端来黑马</span>
             </a>
-            <div class="mt-5">
-              <h5 class="mb-0 text-white">黑马前端</h5>
-              <span class="d-block text-sm text-white opacity-8 mb-3">数据可视化</span>
-              <a href="javascript:;" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
-                <span class="btn-inner--text">学前端来黑马</span>
+          </div>
+        </div>
+      </div>
+      <!-- Application nav -->
+      <div class="nav-application clearfix">
+        <a href="./index.html" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-house bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">首页</span>
+        </a>
+        <a href="./student.html" class="btn btn-square text-sm active">
+          <span class="btn-inner--icon d-block"><i class="bi bi-people bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">学生</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-columns bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">排版</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-files bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">资料</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-receipt bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">就业</span>
+        </a>
+        <a href="javascript:;" class="btn btn-square text-sm">
+          <span class="btn-inner--icon d-block"><i class="bi bi-gear bi-2x"></i></span>
+          <span class="btn-inner--icon d-block pt-2">设置</span>
+        </a>
+      </div>
+      <!-- Misc area -->
+      <div class="card bg-gradient-warning">
+        <div class="card-body">
+          <h5 class="text-white">哈喽, 朋友!</h5>
+          <p class="text-white mb-4">为什么不现在开始学习前端，创造一些令人惊叹的东西呢？</p>
+          <a href="http://itcast.cn" class="btn btn-sm btn-block btn-white rounded-pill" target="_blank">Get started</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-content position-relative">
+      <nav class="navbar navbar-main navbar-expand-lg navbar-dark navbar-border" id="navbar-main">
+        <div class="container-fluid">
+          <!-- Navbar nav -->
+          <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
+            <ul class="navbar-nav align-items-lg-center">
+              <!-- Home  -->
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 首页 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 传智教育 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 黑马程序员 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" href="./index.html"> 文档 </a>
+              </li>
+            </ul>
+            <!-- Right menu -->
+            <ul class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex">
+              <li class="nav-item dropdown dropdown-animate">
+                <a class="nav-link pr-lg-0" href=".dropdown-menu" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <div class="media media-pill align-items-center">
+                    <span class="avatar rounded-circle">
+                      <img alt="Image placeholder"
+                        src="https://yanxuan-item.nosdn.127.net/8b27deb1670c53e67c42ca3e1ed6fd12.jpg" />
+                    </span>
+                    <div class="ml-2 d-none d-lg-block">
+                      <span class="mb-0 text-sm font-weight-bold">Admin</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-lg-0" id="logout" href="javascript:;"> 退出 </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="page-content">
+        <div class="page-title mb-3">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <h5 class="h3 font-weight-400 mb-0 text-white">Students</h5>
+              <span class="text-sm text-white opacity-8">一共有 <b class="total">0</b> 位学员</span>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
+              <a id="openModal" href="javascript:;" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4">
+                <span class="btn-inner--icon"><i class="bi bi-plus bi-2x"></i></span>
               </a>
             </div>
           </div>
         </div>
-        <!-- Application nav -->
-        <div class="nav-application clearfix">
-          <a href="./index.html" class="btn btn-square text-sm">
-            <span class="btn-inner--icon d-block"><i class="bi bi-house bi-2x"></i></span>
-            <span class="btn-inner--icon d-block pt-2">首页</span>
-          </a>
-          <a href="./student.html" class="btn btn-square text-sm active">
-            <span class="btn-inner--icon d-block"><i class="bi bi-people bi-2x"></i></span>
-            <span class="btn-inner--icon d-block pt-2">学生</span>
-          </a>
-          <a href="javascript:;" class="btn btn-square text-sm">
-            <span class="btn-inner--icon d-block"><i class="bi bi-columns bi-2x"></i></span>
-            <span class="btn-inner--icon d-block pt-2">排版</span>
-          </a>
-          <a href="javascript:;" class="btn btn-square text-sm">
-            <span class="btn-inner--icon d-block"><i class="bi bi-files bi-2x"></i></span>
-            <span class="btn-inner--icon d-block pt-2">资料</span>
-          </a>
-          <a href="javascript:;" class="btn btn-square text-sm">
-            <span class="btn-inner--icon d-block"><i class="bi bi-receipt bi-2x"></i></span>
-            <span class="btn-inner--icon d-block pt-2">就业</span>
-          </a>
-          <a href="javascript:;" class="btn btn-square text-sm">
-            <span class="btn-inner--icon d-block"><i class="bi bi-gear bi-2x"></i></span>
-            <span class="btn-inner--icon d-block pt-2">设置</span>
-          </a>
-        </div>
-        <!-- Misc area -->
-        <div class="card bg-gradient-warning">
-          <div class="card-body">
-            <h5 class="text-white">哈喽, 朋友!</h5>
-            <p class="text-white mb-4">为什么不现在开始学习前端，创造一些令人惊叹的东西呢？</p>
-            <a href="http://itcast.cn" class="btn btn-sm btn-block btn-white rounded-pill" target="_blank">Get started</a>
-          </div>
-        </div>
-      </div>
-      <div class="main-content position-relative">
-        <nav class="navbar navbar-main navbar-expand-lg navbar-dark navbar-border" id="navbar-main">
-          <div class="container-fluid">
-            <!-- Navbar nav -->
-            <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
-              <ul class="navbar-nav align-items-lg-center">
-                <!-- Home  -->
-                <li class="nav-item">
-                  <a class="nav-link pl-lg-0" href="./index.html"> 首页 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-lg-0" href="./index.html"> 传智教育 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-lg-0" href="./index.html"> 黑马程序员 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-lg-0" href="./index.html"> 文档 </a>
-                </li>
-              </ul>
-              <!-- Right menu -->
-              <ul class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex">
-                <li class="nav-item dropdown dropdown-animate">
-                  <a class="nav-link pr-lg-0" href=".dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="media media-pill align-items-center">
-                      <span class="avatar rounded-circle">
-                        <img alt="Image placeholder" src="https://yanxuan-item.nosdn.127.net/8b27deb1670c53e67c42ca3e1ed6fd12.jpg" />
-                      </span>
-                      <div class="ml-2 d-none d-lg-block">
-                        <span class="mb-0 text-sm font-weight-bold">Admin</span>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-lg-0" id="logout" href="javascript:;"> 退出 </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div class="page-content">
-          <div class="page-title mb-3">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-md-6 mb-3 mb-md-0">
-                <h5 class="h3 font-weight-400 mb-0 text-white">Students</h5>
-                <span class="text-sm text-white opacity-8">一共有 <b class="total">0</b> 位学员</span>
-              </div>
-              <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
-                <a id="openModal" href="javascript:;" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4">
-                  <span class="btn-inner--icon"><i class="bi bi-plus bi-2x"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="card card-fluid">
-                <div class="table-responsive" style="min-height: 1000px">
-                  <table class="table align-items-center">
-                    <thead>
-                      <tr>
-                        <th>姓名</th>
-                        <th>年龄</th>
-                        <th>性别</th>
-                        <th>组号</th>
-                        <th>期望薪资</th>
-                        <th>就业薪资</th>
-                        <th>籍贯</th>
-                        <th>操作</th>
-                      </tr>
-                    </thead>
-                    <tbody class="list">
-                      <!-- <tr>
+        <div class="row">
+          <div class="col">
+            <div class="card card-fluid">
+              <div class="table-responsive" style="min-height: 1000px">
+                <table class="table align-items-center">
+                  <thead>
+                    <tr>
+                      <th>姓名</th>
+                      <th>年龄</th>
+                      <th>性别</th>
+                      <th>组号</th>
+                      <th>期望薪资</th>
+                      <th>就业薪资</th>
+                      <th>籍贯</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <!-- <tr>
                       <td>张杰</td>
                       <td>20</td>
                       <td>男</td>
@@ -157,122 +162,360 @@
                         <a href="javascript:;" class="text-danger"><i class="bi bi-trash"></i></a>
                       </td>
                     </tr> -->
-                    </tbody>
-                  </table>
-                </div>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-          <!-- footer -->
-          <div class="footer pt-5 pb-4 footer-light" id="footer-main">
-            <div class="row text-center text-sm-left align-items-sm-center">
-              <div class="col-sm-6">
-                <p class="text-sm mb-0">© 2022 <a href="https://itcast.cn" class="h6 text-sm" target="_blank">前端学科</a>. All rights reserved.</p>
-              </div>
-              <div class="col-sm-6 mb-md-0">
-                <ul class="nav justify-content-center justify-content-md-end">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Support</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Terms</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link pr-0" href="#">Privacy</a>
-                  </li>
-                </ul>
-              </div>
+        </div>
+        <!-- footer -->
+        <div class="footer pt-5 pb-4 footer-light" id="footer-main">
+          <div class="row text-center text-sm-left align-items-sm-center">
+            <div class="col-sm-6">
+              <p class="text-sm mb-0">© 2022 <a href="https://itcast.cn" class="h6 text-sm" target="_blank">前端学科</a>.
+                All rights reserved.</p>
+            </div>
+            <div class="col-sm-6 mb-md-0">
+              <ul class="nav justify-content-center justify-content-md-end">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Terms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pr-0" href="#">Privacy</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- add Modal -->
-    <div class="modal fade" id="modal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">添加学员</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="form" class="g-3 row" autocomplete="off" novalidate>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="input-group-label">姓名：</label>
-                  <input type="text" name="name" class="form-control" placeholder="请输入姓名" />
-                </div>
+  </div>
+  <!-- add Modal -->
+  <div class="modal fade" id="modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">XXX</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form" class="g-3 row" autocomplete="off" novalidate>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="input-group-label">姓名：</label>
+                <input type="text" name="name" class="form-control" placeholder="请输入姓名" />
               </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="input-group-label">性别：</label>
-                  <div class="input">
-                    <div class="form-check d-inline-block">
-                      <input value="0" checked id="cb01" class="form-check-input" type="radio" name="gender" />
-                      <label for="cb01" class="form-check-label">男</label>
-                    </div>
-                    <div class="form-check d-inline-block">
-                      <input value="1" id="cb02" class="form-check-input" type="radio" name="gender" />
-                      <label for="cb02" class="form-check-label">女</label>
-                    </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="input-group-label">性别：</label>
+                <div class="input">
+                  <div class="form-check d-inline-block">
+                    <input value="0" checked id="cb01" class="form-check-input" type="radio" name="gender" />
+                    <label for="cb01" class="form-check-label">男</label>
+                  </div>
+                  <div class="form-check d-inline-block">
+                    <input value="1" id="cb02" class="form-check-input" type="radio" name="gender" />
+                    <label for="cb02" class="form-check-label">女</label>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="input-group-label">年龄：</label>
-                  <input type="text" name="age" class="form-control" placeholder="请输入年龄" />
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="input-group-label">年龄：</label>
+                <input type="text" name="age" class="form-control" placeholder="请输入年龄" />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="input-group-label">组号：</label>
+                <input type="text" name="group" class="form-control" placeholder="请输入1-8组号" />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="input-group-label">期望薪资：</label>
+                <input type="text" name="hope_salary" class="form-control" placeholder="请输入期望薪资" />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="input-group-label">就业薪资：</label>
+                <input type="text" name="salary" class="form-control" placeholder="请输入就业薪资" />
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="input-group-label">籍贯：</label>
+                <div class="input pl-0">
+                  <select class="form-select custom-select" name="province">
+                    <option value="">--省份--</option>
+                  </select>
+                  <select class="form-select custom-select" name="city">
+                    <option value="">--城市--</option>
+                  </select>
+                  <select class="form-select custom-select" name="area">
+                    <option value="">--地区--</option>
+                  </select>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="input-group-label">组号：</label>
-                  <input type="text" name="group" class="form-control" placeholder="请输入1-8组号" />
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="input-group-label">期望薪资：</label>
-                  <input type="text" name="hope_salary" class="form-control" placeholder="请输入期望薪资" />
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="input-group-label">就业薪资：</label>
-                  <input type="text" name="salary" class="form-control" placeholder="请输入就业薪资" />
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="form-group">
-                  <label class="input-group-label">籍贯：</label>
-                  <div class="input pl-0">
-                    <select class="form-select custom-select" name="province">
-                      <option value="">--省份--</option>
-                    </select>
-                    <select class="form-select custom-select" name="city">
-                      <option value="">--城市--</option>
-                    </select>
-                    <select class="form-select custom-select" name="area">
-                      <option value="">--地区--</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-blue" id="submit">确认</button>
-          </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-blue" id="submit">确认</button>
         </div>
       </div>
     </div>
-    <script src="./bootstrap/bootstrap.min.js"></script>
-    <script src="./lib/axios.js"></script>
-    <script src="./lib/form-serialize.js"></script>
-    <script src="./js/common.js"></script>
-    <script>
-      
-    </script>
-  </body>
+  </div>
+  <script src="./bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/axios.js"></script>
+  <script src="./lib/form-serialize.js"></script>
+  <script src="./js/common.js"></script>
+
+
+
+  <script>
+    // 获取元素
+    let list = document.querySelector('.list')
+    let total = document.querySelector('.total')
+
+    let add = document.querySelector('.btn-inner--icon .bi-plus')
+    let modal_title = document.querySelector('.modal-title')
+
+    let form = document.querySelector('#form')
+
+    let provinceSelect = document.querySelector('[name=province]')
+    let citySelect = document.querySelector('[name=city]')
+    let areaSelect = document.querySelector('[name=area]')
+
+    // 封装函数
+    async function render() {
+
+      // 获取数据学员的数据
+      let { data: res } = await axios.get('/students')
+      console.log(res.data);
+
+      total.innerText = res.data.length
+
+      // 遍历数据，渲染数据
+      list.innerHTML = res.data.map(item => {
+
+        let { age, area, city, gender, group, hope_salary, name, province, salary, id } = item
+        return `
+                      <tr>
+                      <td>${name}</td>
+                      <td>${age}</td>
+                      <td>${gender === 0 ? '男' : '女'}</td>
+                      <td>${group}</td>
+                      <td>${hope_salary}</td>
+                      <td>${salary}</td>
+                      <td>${province + city + area}</td>
+                      <td>
+                        <a href="javascript:;" class="text-success mr-3"><i data-id="${id}" class="bi bi-pen"></i></a>
+                        <a href="javascript:;" class="text-danger"><i data-id="${id}" class="bi bi-trash"></i></a>
+                      </td>
+                    </tr> `
+      }).join('')
+    }
+    render()
+
+    // 实现弹框显示
+    // 获取模态框
+    let modalBox = document.querySelector('#modal')
+
+    // 新建实例对象
+    let modal = new bootstrap.Modal(modalBox)
+
+    modal.hide()
+
+    // 点击删除/编辑学员数据
+    // 使用事件委托
+    list.addEventListener('click', async function (e) {
+      console.log(e.target.dataset.id);
+
+      // 如果为真，则点击的删除按钮
+      if (e.target.classList.contains('bi-trash')) {
+        let id = e.target.dataset.id
+
+        try {
+          //接口文档里的id前面加了引号，是不加的
+          //接口文档里的地址加了冒号，是要你填具体值得意思
+          let res = await axios.delete(`/students/${id}`)
+          render()
+        } catch (e) {
+          console.dir(e)
+        }
+      }
+
+      // 如果为真，则点击的是编辑按钮
+      if (e.target.classList.contains('bi-pen')) {
+
+        //将点击的编辑按钮的id，存到模态框上（模态框是唯一的，所以要改谁，就存谁）
+        modalBox.dataset.id = e.target.dataset.id
+        modal_title.innerHTML = '编辑学员'
+
+
+        let { data: res } = await axios.get(`/students/${modalBox.dataset.id}`)
+
+        let fields = Array.from(document.querySelectorAll('#form [name]'))
+
+        // 回显数据
+        fields.forEach(item => {
+          // 回显性别数据
+          if (item.name === 'gender') {
+            // 单选框要单独处理，两个单选框，不能都选中
+            // 看input的value值 和 student.gender 是否相等，相等才选中
+            console.log(res.data.gender);
+            // 这里要加一个+，让他变成数字类型。
+            // 因为原始的类型是字符串 value="0"
+            if (+item.value === res.data.gender) {
+              console.log(item.value);
+              item.checked = true
+            }
+            // 回显其他的数据
+          } else {
+            // input框, select框，都可以通过.value赋值
+            // item就是 每个有name的表单元素，item.name => 表单元素的name值
+            // 利用每个item.name值，就可以去student中用中括号语法去取值
+            item.value = res.data[item.name]
+          }
+        })
+
+        // 回显城市
+        let { data: city } = await axios.get('/api/city', {
+          params: {
+            pname: provinceSelect.value
+          }
+        })
+        let arrC = city.data.map(item => `<option value="${item}">${item}</option> `).join('')
+        citySelect.innerHTML = `<option value="">--城市--</option>+${arrC}`
+        citySelect.value = res.data.city
+
+        // 回显地区
+        let { data: area } = await axios.get('/api/area', {
+          params: {
+            pname: provinceSelect.value,
+            cname: citySelect.value
+          }
+        })
+        let arrA = area.data.map(item => `<option value="${item}">${item}</option> `).join('')
+        areaSelect.innerHTML = `<option value="">--地区--</option>+ ${arrA}`
+        areaSelect.value = res.data.area
+
+
+        modal.show()
+      }
+    })
+
+    // 点击添加按钮
+    add.addEventListener('click', function () {
+
+      // 重置表单
+      form.reset()
+
+      //更改标题
+      modal_title.innerHTML = '添加学员'
+
+      // 设置标识，便于区分是添加信息，还是编辑数据 (因为添加学员信息和修改是公用同一个弹框)
+      // 如果是添加，记录一个字符串“add"
+      // 如果是修改，记录一个修改的id
+      modalBox.dataset.id = 'add'
+
+      // 切换弹框状态
+      modal.toggle()
+    })
+
+
+
+    // 初始化省市区联动的功能
+    async function initCity() {
+      let { data: province } = await axios.get('/api/province')
+
+      // 渲染省份
+      let arrP = province.data.map(item => `<option value="${item}">${item}</option>`).join('')
+      provinceSelect.innerHTML = `<option value="">--省份--</option>+${arrP}`
+
+      // 选择了省份后，市的信息自动渲染
+      provinceSelect.addEventListener('change', async function () {
+
+        // 省份发生变化时，区域自动重置
+        areaSelect.value = ''
+
+        // 渲染城市
+        let { data: city } = await axios.get('/api/city', {
+          params: {
+            pname: provinceSelect.value
+          }
+        })
+
+        let arrC = city.data.map(item => `<option value="${item}">${item}</option> `).join('')
+
+        citySelect.innerHTML = `<option value="">--城市--</option>+${arrC}`
+      })
+
+      // 选择了市后，地区的信息自动渲染
+      citySelect.addEventListener('change', async function () {
+
+        // 渲染地区
+        let { data: area } = await axios.get('/api/area', {
+          params: {
+            pname: provinceSelect.value,
+            cname: citySelect.value
+          }
+        })
+        let arrA = area.data.map(item => `<option value="${item}">${item}</option> `).join('')
+        areaSelect.innerHTML = `<option value="">--地区--</option>+ ${arrA}`
+      })
+
+
+    }
+    initCity()
+
+    //提交表单数据
+    let btnSubmit = document.querySelector('#submit')
+    btnSubmit.addEventListener('click', async function () {
+      let data = serialize(form, { hash: true })
+      console.log(data);
+
+      //因为一些参数需要是数字类型，所以这里给他们更改类型
+      data.age = +data.age
+      data.gender = +data.gender
+      data.hope_salary = +data.hope_salary
+      data.salary = +data.salary
+      data.group = +data.group
+
+      if (modalBox.dataset.id === 'add') {
+        try {
+          let { data: res } = await axios.post('/students', data)
+          modal.toggle()
+          render()
+        } catch (e) {
+          console.dir(e)
+          alert('添加失败')
+        }
+      }
+      // 修改信息操作
+      else {
+
+        try {
+          await axios.put(`/students/${modalBox.dataset.id}`, data)
+          modal.toggle()
+          render()
+        } catch (e) {
+          console.dir(e)
+        }
+      }
+    })
+
+
+
+  </script>
+</body>
+
 </html>
